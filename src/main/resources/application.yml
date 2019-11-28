@@ -1,0 +1,6 @@
+person:
+  name: 左俊皓
+  age: 25
+  hobbies: ["干","起","来"]
+  birth: 1994/6/10
+  score: {"java":100,"Hadoop":100}
