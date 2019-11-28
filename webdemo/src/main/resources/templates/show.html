@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 导入命名空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input type="text" th:value="${name}"/><br/>
+        <input type="text" th:value="${age}"/><br/>
+        <input type="text" th:value="${sex}"/><br/>
+    </form>
+    <span th:text="${book.name}"></span>
+    <span th:text="${book.isbn}"></span>
+    <span th:text="${book.price}"></span>
+    <span th:text="${#dates.format(book.publisTime,'yyyy-MM-dd')}"></span>
+<div th:object="${book}">
+    <div th:text="*{name}"></div>
+    <div th:text="*{isbn}"></div>
+    <div th:text="*{price}"></div>
+</div>
+<a th:href="@{/index.html}">首页</a>
+    <div th:text="${#session.getAttribute('myBook')}"></div>
+<script th:src="@{webjars/jquery/3.3.1-1/jquery.js}"></script>
+<script>
+    $(function () {
+        alert("jquery 已经加载");
+    })
+</script>
+
+<select>
+    <option th:each="h:${hobby}" th:text="${h}"></option>
+</select>
+
+</body>
+</html>
